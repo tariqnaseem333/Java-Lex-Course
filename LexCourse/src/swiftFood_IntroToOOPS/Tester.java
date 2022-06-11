@@ -70,8 +70,10 @@ public class Tester {
 //		order2.displayOrderDetails();
 		
 		
-		Restaurant res = new Restaurant( "McDonald's", 9988787878L, "California, USA", 4.1F );
-		res.displayRestaurantDetails();
+		long[] restaurantContacts = { 9992346725L, 9992346726L, 9992346727L };
+		Restaurant restaurant1 = new Restaurant("SwiftFood",
+				restaurantContacts, "Carolina Street, Springfield, 62702", 4.1f);
+		restaurant1.displayRestaurantDetails();
 		
 	}
 }

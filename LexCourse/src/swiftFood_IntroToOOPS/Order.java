@@ -2,11 +2,40 @@ package swiftFood_IntroToOOPS;
 
 public class Order {
 	
-	public int orderId;
-	public String orderedFoods;
-	public String status;
-	public double totalPrice;
+	private int orderId;
+	private String orderedFoods;
+	private String status;
+	private double totalPrice;
 	
+	
+	public int getOrderId() {
+		return orderId;
+	}
+	public void setOrderId(int orderId) {
+		this.orderId = orderId;
+	}
+
+	public String getOrderedFoods() {
+		return orderedFoods;
+	}
+	public void setOrderedFoods(String orderedFoods) {
+		this.orderedFoods = orderedFoods;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public double getTotalPrice() {
+		return totalPrice;
+	}
+	public void setTotalPrice(double totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
 	public Order() {
 		this.status = "Ordered";
 	}
