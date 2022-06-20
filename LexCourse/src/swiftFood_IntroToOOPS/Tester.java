@@ -70,10 +70,18 @@ public class Tester {
 //		order2.displayOrderDetails();
 		
 		
-		long[] restaurantContacts = { 9992346725L, 9992346726L, 9992346727L };
-		Restaurant restaurant1 = new Restaurant("SwiftFood",
-				restaurantContacts, "Carolina Street, Springfield, 62702", 4.1f);
-		restaurant1.displayRestaurantDetails();
+//		long[] restaurantContacts = { 9992346725L, 9992346726L, 9992346727L };
+//		Restaurant restaurant1 = new Restaurant("SwiftFood",
+//				restaurantContacts, "Carolina Street, Springfield, 62702", 4.1f);
+//		restaurant1.displayRestaurantDetails();
+		
+//		Addng Static variable deliveryCharge
+		Customer customer1 = new Customer("C1001", "Sam", 9945000009L, "Carolina Street, Springfield, 62702");
+		Customer.setDeliveryCharge(2f);
+		System.out.println("Final amount to be paid: $" + customer1.payBill(20));
+		Customer customer2 = new Customer("C1002", "John", 9645000009L, "Carolina Street, Springfield, 62708");
+		System.out.println("Final amount to be paid: $" + customer2.payBill(15));
+		System.out.println("Delivery Charge for the customers are: " + Customer.getDeliveryCharge());
 		
 	}
 }
