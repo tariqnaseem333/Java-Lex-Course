@@ -1,4 +1,4 @@
-package Association;
+package aggregation;
 
 public class Book {
     //instance variables
@@ -7,6 +7,20 @@ public class Book {
     private float cost;
     private String genre;
     
+    //methods
+    public Book(String bookName, String authorName) {
+        this.bookName = bookName;
+        this.authorName = authorName;
+    }    
+    public void displayBookDetails() {
+        System.out.println("Book Details:-");
+        System.out.println("Book Name: "+bookName);
+        System.out.println("Author Name: "+authorName);
+        System.out.println("Cost: "+cost);
+        System.out.println("Genre: "+genre);
+    } 
+    
+//    Getters and Setters
     public String getBookName() {
 		return bookName;
 	}
@@ -31,17 +45,4 @@ public class Book {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-    
-    //methods
-    public Book(String bookName, String authorName) {
-        this.bookName = bookName;
-        this.authorName = authorName;
-    }    
-    public void displayBookDetails() {
-        System.out.println("Book Details:-");
-        System.out.println("Book Name: "+bookName);
-        System.out.println("Author Name: "+authorName);
-        System.out.println("Cost: "+cost);
-        System.out.println("Genre: "+genre);
-    }    
 }

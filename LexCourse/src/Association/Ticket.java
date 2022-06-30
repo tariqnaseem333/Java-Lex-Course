@@ -1,4 +1,4 @@
-package Aggregation;
+package association;
 
 public class Ticket {
 
@@ -9,7 +9,7 @@ public class Ticket {
 	private String timing;
 	private float pricePerTicket;
 	
-//	methods
+//	Getters and Setters
 	public Ticket ( int  ticketId ) {
 		this.ticketId = ticketId;
 	}

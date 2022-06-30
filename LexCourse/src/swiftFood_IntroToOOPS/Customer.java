@@ -7,13 +7,52 @@ public class Customer {
 	private String customerId;
 	private String customerName;
 	private long contactNumber;
-	private String address;
+	private Address address;  // Aggregation
 	private static float deliveryCharge;
+	
 	static {
 		deliveryCharge = 1.5f;
 	}
 	
+//	Constructors
+	public Customer() {
+		
+	}
 	
+	public Customer(String customerId, String customerName, long contactNumber, Address address) {
+		this.customerId = customerId;
+		this.customerName = customerName;
+		this.contactNumber = contactNumber;
+		this.address = address;
+	}
+	
+	public Customer(String customerName, long contactNumber, Address address) {
+		this.customerName = customerName;
+		this.contactNumber = contactNumber;
+		this.address = address;
+	}
+	
+//	Methods
+	public void displayCustomerDetails() {
+		System.out.println("Displaying customer details \n***********");
+		System.out.println("Customer Id : " + customerId);
+		System.out.println("Customer Name : " + customerName);
+		System.out.println("Contact Number : " + contactNumber);
+		System.out.println("Address : " + address);
+		System.out.println("Delivery Charge: " + Customer.deliveryCharge);
+		System.out.println();
+	}
+	
+
+	public double payBill(double totalPrice) {
+		double discountPercentage = 5;
+		System.out.println("Calculating final amount to be paid.....");
+		double priceAfterDiscount = totalPrice * (1 - (discountPercentage / 100));
+		double finalBillAmount = priceAfterDiscount + Customer.deliveryCharge;
+		return finalBillAmount;
+	}
+	
+//	Getters and Setters
 	public String getCustomerId() {
 		return customerId;
 	}
@@ -38,11 +77,11 @@ public class Customer {
 		this.contactNumber = contactNumber;
 	}
 
-	public String getAddress() {
+	public Address getAddress() {
 		return address;
 	}
 
-	public void setAddress(String address) {
+	public void setAddress(Address address) {
 		this.address = address;
 	}
 	
@@ -52,36 +91,6 @@ public class Customer {
 
 	public static void setDeliveryCharge(float deliveryCharge) {
 		Customer.deliveryCharge = deliveryCharge;
-	}
-
-	public Customer() {
-		
-	}
-	
-	public Customer(String customerId, String customerName, long contactNumber, String address) {
-		this.customerId = customerId;
-		this.customerName = customerName;
-		this.contactNumber = contactNumber;
-		this.address = address;
-	}
- 
-	public void displayCustomerDetails() {
-		System.out.println("Displaying customer details \n***********");
-		System.out.println("Customer Id : " + customerId);
-		System.out.println("Customer Name : " + customerName);
-		System.out.println("Contact Number : " + contactNumber);
-		System.out.println("Address : " + address);
-		System.out.println("Delivery Charge: " + Customer.deliveryCharge);
-		System.out.println();
-	}
-	
-
-	public double payBill(double totalPrice) {
-		double discountPercentage = 5;
-		System.out.println("Calculating final amount to be paid.....");
-		double priceAfterDiscount = totalPrice * (1 - (discountPercentage / 100));
-		double finalBillAmount = priceAfterDiscount + Customer.deliveryCharge;
-		return finalBillAmount;
 	}
 
 }

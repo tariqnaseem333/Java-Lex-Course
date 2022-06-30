@@ -1,4 +1,4 @@
-package Aggregation;
+package association;
 
 public class Person {
 
@@ -8,7 +8,7 @@ public class Person {
 	private String gender;
 	private int numberOfTickets;
 	
-//	methods
+//	constructor method
 	public Person(String personName, int age, String gender, int numberOfTickets) {
 		this.personName = personName;
 		this.age = age;
@@ -22,6 +22,8 @@ public class Person {
 		System.out.println("Amount to be paid:- " + final_amt);
 	}
 
+	
+//	Getters and Setters
 	public String getPersonName() {
 		return personName;
 	}
