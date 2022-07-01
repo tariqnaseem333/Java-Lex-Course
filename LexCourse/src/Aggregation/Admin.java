@@ -2,9 +2,6 @@ package aggregation;
 
 public class Admin {
 	
-//	private Room[] rooms;
-//	private Member member;
-	
 	public void assignRoom( Room[] rooms, Member member ) {
 		for( Room room: rooms ) {
 			if( room.getCapacity()>0 && room.getCapacity()<=4 ) {
