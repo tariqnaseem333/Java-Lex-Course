@@ -9,7 +9,9 @@ public class Order {
 	private String orderedFoods;
 	private double totalPrice;
 	private static int orderIdCounter;
+	private Customer customer;
 	public static int count;
+	
 	
 	static {
 		orderIdCounter = 101;
@@ -19,8 +21,9 @@ public class Order {
 //	Constructors
 	public Order() {
 	}
-	public Order( Food[] orderedfoods ) {
+	public Order( Food[] orderedfoods, Customer customer ) {
 		this.orderedfoods = orderedfoods;
+		this.customer = customer;
 	}
 	public Order( int orderId, Food[] orderedfoods ) {
 		this.status = "Ordered";
